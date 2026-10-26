@@ -1,0 +1,23 @@
+{
+  "schema": "titan-audit-v1.0",
+  "repository": "BenFrohman/TateConjecture",
+  "doi": "10.5281/zenodo.23652980",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "lean_module_count": 1,
+  "sorry_count": 0,
+  "modules": [
+    {
+      "file": "TateConjecture/Basic.lean",
+      "sha256": "9d5bfe9f9e98c9b8c407aae8c28202e82eca13ef325419a4108ac73d3c13e271",
+      "declarations": 3,
+      "sorry_tokens": 0
+    }
+  ],
+  "verdict": "PASS_ZERO_SORRY_HONEST_BOUNDARY",
+  "payload_sha256": "f1fa69fa3f4cba4442579544e7136d3075db8e9e5f5e036f2080215690ec3e7c",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "ae235968de5c6096f4fff15f0d8f6e20ec11707974e3afd29890de357a3dc402ad5ea8504070f74b75498db95cddedd8c244899b47820ccf963f8387495f7107"
+}

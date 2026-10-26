@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference this repository, please cite it using the metadata below."
+title: "TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes"
+authors:
+  - family-names: "Frohman"
+    given-names: "Benjamin Stanley"
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+doi: 10.5281/zenodo.23652980
+url: "https://github.com/BenFrohman/TateConjecture"
+repository-code: "https://github.com/BenFrohman/TateConjecture"
+license: Apache-2.0
+copyright: "Copyright (c) 2026 Benjamin Stanley Frohman"
+date-released: "2026-09-21"

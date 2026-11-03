@@ -1,0 +1,28 @@
+{
+  "title": "TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes",
+  "upload_type": "software",
+  "description": "Standalone Lean 4 structural specification (`TateConjecture/Basic.lean`) and comparative documentation (`docs/STATEMENT.md`, `docs/KNOWN_CASES.md`, `docs/COMPARISON.md`) of the Tate Conjecture relating Galois-invariant l-adic etale cohomology classes in H^{2r}_et(X_{k^s}, Q_l(r))^{Gal(k^s/k)} to Q_l-linear combinations of algebraic cycles on smooth projective varieties over finitely generated fields. Formalizes the type-theoretic statement skeleton of the Tate Conjecture in Lean 4. Explicitly states that neither the Tate Conjecture nor the Hodge Conjecture is proved here. Copyright (c) 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.",
+  "creators": [
+    {
+      "name": "Frohman, Benjamin Stanley",
+      "orcid": "0009-0006-7068-3718"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "Lean 4",
+    "Tate conjecture",
+    "Etale cohomology",
+    "Galois representations",
+    "Algebraic cycles",
+    "Arithmetic geometry"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/BenFrohman/TateConjecture",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

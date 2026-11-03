@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\title{\textbf{TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes}}
+\author{Benjamin Stanley Frohman\\
+\small ORCID: \href{https://orcid.org/0009-0006-7068-3718}{0009-0006-7068-3718} \quad|\quad
+GitHub: \href{https://github.com/BenFrohman/TateConjecture}{\texttt{BenFrohman/TateConjecture}}\\
+\small Dedicated 1-to-1 Zenodo DOI: \href{https://doi.org/10.5281/zenodo.23652980}{\texttt{10.5281/zenodo.23652980}}}
+\date{Earliest Commit Provenance: 2026-09-21 03:26:04 PM CDT (UTC-5)\\
+Siloed Archival Edition: October 25, 2026 (America/Chicago CDT)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Standalone Lean 4 structural specification (`TateConjecture/Basic.lean`) and comparative documentation (`docs/STATEMENT.md`, `docs/KNOWN\_CASES.md`, `docs/COMPARISON.md`) of the Tate Conjecture relating Galois-invariant l-adic etale cohomology classes in H\textasciicircum{}\{2r\}\_et(X\_\{k\textasciicircum{}s\}, Q\_l(r))\textasciicircum{}\{Gal(k\textasciicircum{}s/k)\} to Q\_l-linear combinations of algebraic cycles on smooth projective varieties over finitely generated fields.
+\end{abstract}
+
+\section{Scope, Scientific Honesty, and Non-Claim Boundary}
+Formalizes the type-theoretic statement skeleton of the Tate Conjecture in Lean 4. Explicitly states that neither the Tate Conjecture nor the Hodge Conjecture is proved here.
+
+\begin{itemize}
+  \item \textbf{Repository:} \texttt{https://github.com/BenFrohman/TateConjecture}
+  \item \textbf{Dedicated 1-to-1 Zenodo DOI:} \texttt{10.5281/zenodo.23652980}
+  \item \textbf{Earliest Git Commit SHA:} \texttt{9001be1c3db560c2820f1835cdbd81396f618474} (2026-09-21 03:26:04 PM CDT (UTC-5))
+  \item \textbf{License \& Copyright:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman. Licensed under the Apache License, Version 2.0.
+\end{itemize}
+
+\section{Technical Overview \& Repository Specification}
+Author: Benjamin Stanley Frohman ([@BenFrohman](https://github.com/BenFrohman)).
+
+Copyright (c) 2026 Benjamin Stanley Frohman. Apache-2.0.
+
+This repository is **not** a proof of the Tate conjecture.
+
+It is **not** a proof of the Hodge conjecture.
+
+It names the sentence. It does not discharge it.
+
+Let `X` be a smooth projective variety over a finite field `F\_q`.
+
+Tate (in codimension `i`) asks that algebraic cycle classes over `Q\_ℓ`
+
+span the Galois invariants in étale cohomology:
+
+CH\textasciicircum{}i(X)\_\{Q\_ℓ\}  →  H\textasciicircum{}\{2i\}\_et(X\_bar, Q\_ℓ(i))\textasciicircum{}\{Gal\}
+
+is surjective.
+
+For a fourfold and `i = 2`, that is surfaces spanning the Gal-fixed
+
+part of `H\textasciicircum{}4\_et(Q\_ℓ(2))`.
+
+An eigenvalue `q\textasciicircum{}2` of geometric Frobenius on `H\textasciicircum{}4\_et` is the numerical
+
+condition for a Tate class of weight 4, twist 2. It is not a surface.
+
+- Does not construct a Galois-fixed class from a complex `(2,2)`-form.
+
+- Does not set the sentence equal to `True`.
+
+- Does not import into [HODGE](https://github.com/BenFrohman/HODGE).
+
+- Does not use a “Frohmanian curve” as a cycle.
+
+\section{Cryptographic Provenance \& File Inventory}
+Every source artifact in \texttt{BenFrohman/TateConjecture} is audited via \texttt{titan-audit}
+(\texttt{audit/TITAN\_AUDIT\_CERTIFICATE.json}) and sealed under a deterministic SHA-256 Merkle tree via
+\texttt{sealguard} (\texttt{PROVENANCE\_MERKLE\_ROOT.json}) signed with Ed25519 key fingerprint
+\texttt{b428fb72676f1c52}.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.52\textwidth}rr}
+\toprule
+\textbf{Repository Path} & \textbf{Size} & \textbf{SHA-256 Prefix} \\
+\midrule
+\texttt{LICENSE} & 11355 B & \texttt{9da72c2bee4f20ba...} \\
+\texttt{NOTICE} & 492 B & \texttt{e2e4637b6aa6745c...} \\
+\texttt{README.md} & 1268 B & \texttt{906071fc7a279e74...} \\
+\texttt{TateConjecture/Basic.lean} & 1419 B & \texttt{9d5bfe9f9e98c9b8...} \\
+\texttt{docs/STATEMENT.md} & 747 B & \texttt{c5a57b52101ce74e...} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vfill
+\noindent\rule{\textwidth}{0.4pt}\\
+\footnotesize
+\textbf{Attribution \& Licensing Notice:} Copyright \textcopyright\ 2026 Benjamin Stanley Frohman (ORCID: \texttt{0009-0006-7068-3718}).
+Licensed under the Apache License, Version 2.0.
+\end{document}

@@ -1,0 +1,70 @@
+{
+  "schema": "sealguard-merkle-provenance-v1.0",
+  "repository": "BenFrohman/TateConjecture",
+  "doi": "10.5281/zenodo.23652980",
+  "author": "Benjamin Stanley Frohman",
+  "orcid": "0009-0006-7068-3718",
+  "license": "Apache-2.0",
+  "timestamp_cdt": "2026-10-25T19:10:00-05:00",
+  "merkle_root_sha256": "90dd309e7e8d518f7ec3a1852481cc6f6e934e72ea5a54fd219e69afa8f46a10",
+  "ed25519_key_fingerprint": "b428fb72676f1c52",
+  "ed25519_signature": "79317ad01ea972fef05c5f091b6c6af88fe798de6d628281331b5b9253d288b49f6ef81aef30b1ff3bf73f3d2781c6ddf1e6eb042957c258fcc9b4e7e8ff3f09",
+  "leaf_count": 11,
+  "leaves": [
+    {
+      "path": ".zenodo.json",
+      "sha256": "46b929157b768b04f7d8d75d99203681c6286214f85170e37b52f2973b23245d",
+      "bytes": 1348
+    },
+    {
+      "path": "AUTHORS.md",
+      "sha256": "1732529c9d516b14378c2ea60b7a29a9dd01385bb5f302efa163c42b3dceb130",
+      "bytes": 320
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "2607b0a42c5c31356148166091433a4cd3ef6ed37c1ba61459c87fcad69f266c",
+      "bytes": 607
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "ec43eec7417d548fb78a8dc50830f1d854b91a89c2daf0d4e957601515c15e87",
+      "bytes": 10773
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "dde7d79135dc31c19675e46224324b6e81fae4e94ce7f4e53e12484aaa324dcf",
+      "bytes": 590
+    },
+    {
+      "path": "README.md",
+      "sha256": "a9121757c1a6ed4de6e615fa2a31b08a9ee9b384ad0b102b3e1d9498cfde6842",
+      "bytes": 2383
+    },
+    {
+      "path": "TateConjecture/Basic.lean",
+      "sha256": "9d5bfe9f9e98c9b8c407aae8c28202e82eca13ef325419a4108ac73d3c13e271",
+      "bytes": 1419
+    },
+    {
+      "path": "audit/TITAN_AUDIT_CERTIFICATE.json",
+      "sha256": "dffa941a81dac6887c3596eb2a43d3715faa1fb63cd79df4573845844062b400",
+      "bytes": 859
+    },
+    {
+      "path": "docs/STATEMENT.md",
+      "sha256": "c5a57b52101ce74e9a32250d86a45db051c3d2514712afe12a6ca332b5e957fd",
+      "bytes": 747
+    },
+    {
+      "path": "paper/TateConjecture_Technical_Monograph_2026.pdf",
+      "sha256": "42163aeb16a88cad2bd4a5bbf3226d6efae47aaf92d216da356247eb679c062e",
+      "bytes": 48254
+    },
+    {
+      "path": "paper/TateConjecture_Technical_Monograph_2026.tex",
+      "sha256": "222e46519ffb1217abdb46a89a3ac317b239c3e2ac4a8c58e9b5d395dec5d51b",
+      "bytes": 4451
+    }
+  ]
+}

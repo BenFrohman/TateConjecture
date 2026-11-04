@@ -59,3 +59,10 @@ See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
 
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23652979.svg)](https://doi.org/10.5281/zenodo.23652979) TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes — all versions: [10.5281/zenodo.23652979](https://doi.org/10.5281/zenodo.23652979); latest version: [10.5281/zenodo.23652980](https://doi.org/10.5281/zenodo.23652980)
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867543.svg)](https://doi.org/10.5281/zenodo.23867543) TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes — all versions: [10.5281/zenodo.23867543](https://doi.org/10.5281/zenodo.23867543); latest version: [10.5281/zenodo.23867544](https://doi.org/10.5281/zenodo.23867544)
+
+
+## Zenodo: Frohman_Tate_Conjecture_Lean_Interface_2026
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23942457.svg)](https://doi.org/10.5281/zenodo.23942457)
+
+The paper `paper/Frohman_Tate_Conjecture_Lean_Interface_2026.pdf` is archived on Zenodo as https://doi.org/10.5281/zenodo.23942457.

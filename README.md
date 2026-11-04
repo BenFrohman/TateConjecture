@@ -54,3 +54,8 @@ Tate stays open. Hodge stays open.
 ## Verification certificate
 
 See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.
+
+## Zenodo archive
+
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23652979.svg)](https://doi.org/10.5281/zenodo.23652979) TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes — all versions: [10.5281/zenodo.23652979](https://doi.org/10.5281/zenodo.23652979); latest version: [10.5281/zenodo.23652980](https://doi.org/10.5281/zenodo.23652980)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23867543.svg)](https://doi.org/10.5281/zenodo.23867543) TateConjecture: Lean 4 Structural Specification of the Tate Conjecture for Galois-Invariant Etale Cycle Classes — all versions: [10.5281/zenodo.23867543](https://doi.org/10.5281/zenodo.23867543); latest version: [10.5281/zenodo.23867544](https://doi.org/10.5281/zenodo.23867544)

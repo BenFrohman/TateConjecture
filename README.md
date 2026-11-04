@@ -1,6 +1,7 @@
 # TateConjecture
 
 [![Lean certificate](https://github.com/BenFrohman/TateConjecture/actions/workflows/certify.yml/badge.svg)](https://github.com/BenFrohman/TateConjecture/actions/workflows/certify.yml)
+[![Lean 4](https://github.com/BenFrohman/TateConjecture/actions/workflows/lean.yml/badge.svg)](https://github.com/BenFrohman/TateConjecture/actions/workflows/lean.yml)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23652980.svg)](https://doi.org/10.5281/zenodo.23652980) [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 

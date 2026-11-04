@@ -1,0 +1,152 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage[no-math]{fontspec}
+\setmonofont{DejaVu Sans Mono}[Scale=0.72]
+\usepackage{longtable}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title[TateConjecture]{The Tate Conjecture as a Parametric Proposition: a Machine-Checked Lean~4 Interface without Axioms}
+\author{Benjamin Stanley Frohman}
+\email{frohmanbenjamin@gmail.com}
+\urladdr{https://github.com/BenFrohman/TateConjecture}
+\date{November 4, 2026}
+\sloppy
+\begin{document}
+\begin{abstract}
+We state the Tate conjecture in Lean~4 as a proposition that depends on an explicit structure \texttt{TateSetting}, in place of four user-declared axioms. The structure carries a type of hosts (smooth projective varieties over a finite field), types of codimension-$i$ cycle classes and of Galois invariants in $H^{2i}_{\mathrm{et}}(\overline X,\mathbb Q_l(i))$, and a cycle class map. For every such setting we prove that the statement is exactly surjectivity of the cycle class map, and that the fourfold-surfaces case is the codimension-2 statement. Neither the Tate conjecture nor any case of it is proved. The development builds with no \texttt{sorry}, no \texttt{native\_decide} and no user axioms.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Let $X$ be a smooth projective variety over a finite field $k$, with $\overline X$ its base change to an algebraic closure and $l\ne\operatorname{char}k$. The Tate conjecture~\cite{tate} asserts that the cycle class map
+\[ \mathrm{cl}:\ Z^i(X)\otimes\mathbb Q_l\to H^{2i}_{\mathrm{et}}(\overline X,\mathbb Q_l(i))^{\mathrm{Gal}(\bar k/k)} \]
+is surjective. It is open in general. The repository previously introduced the host type, the two coefficient types and the cycle class map as Lean axioms. In this version they are fields of a structure, so the conjecture is a proposition about an arbitrary setting supplied by the user, and the Lean environment contains no user axioms.
+
+\section{Definitions}
+\begin{definition}[\texttt{TateConjecture.TateSetting}]
+A \emph{Tate setting} $S$ consists of a type $\mathcal X$, types $C(X,i)$ and $G(X,i)$ for $X\in\mathcal X$ and $i\in\mathbb N$, and maps $\mathrm{cl}_{X,i}:C(X,i)\to G(X,i)$.
+\end{definition}
+\begin{definition}[\texttt{Statement}, \texttt{openSentence}, \texttt{fourfoldSurfaces}]
+$\mathrm{Statement}(S,X,i)$ means: for every $y\in G(X,i)$ there is $x\in C(X,i)$ with $\mathrm{cl}_{X,i}(x)=y$. The proposition \texttt{openSentence} is defined to be $\mathrm{Statement}(S,X,i)$, and \texttt{fourfoldSurfaces} is $\mathrm{Statement}(S,X,2)$.
+\end{definition}
+
+\section{Results}
+\begin{proposition}[\texttt{TateConjecture.statement\_iff\_surjective}]
+For every Tate setting $S$, host $X$ and $i\in\mathbb N$, $\mathrm{Statement}(S,X,i)$ holds if and only if $\mathrm{cl}_{X,i}$ is surjective.
+\end{proposition}
+\begin{proposition}[\texttt{TateConjecture.fourfoldSurfaces\_iff}]
+For every Tate setting $S$ and host $X$, \texttt{fourfoldSurfaces} holds if and only if $\mathrm{Statement}(S,X,2)$ holds.
+\end{proposition}
+Both hold by definition, and Lean proves them by \texttt{Iff.rfl}.
+
+\section{Correspondence between claims and Lean declarations}\label{sec:table}
+Every mathematical claim of this paper is listed below with the Lean declaration that proves it. ``Conditional'' means the hypothesis named in the statement is an explicit argument of the Lean theorem and is \emph{not} proved in the repository. No claim in this paper goes beyond these statements.
+
+{\footnotesize
+\begin{longtable}{p{0.30\linewidth}p{0.40\linewidth}p{0.22\linewidth}}
+\hline
+Claim & Lean declaration & Status \\
+\hline\endhead
+Statement $\Leftrightarrow$ cycle class map surjective & \path{TateConjecture.statement_iff_surjective} & Proved (for every setting) \\
+Fourfold-surfaces case $=$ codimension 2 & \path{TateConjecture.fourfoldSurfaces_iff} & Proved (for every setting) \\
+\hline
+\end{longtable}}
+
+\section{Scope and limitations}
+Varieties over finite fields, étale cohomology, Galois actions and algebraic cycles are not formalized. A \texttt{TateSetting} may be any data at all, and the propositions above are unfolding identities. The Tate conjecture is not proved, in any codimension or for any variety. The relation of a Frobenius eigenvalue $q^2$ to cycles is not formalized either. Statement changes in this version: the axioms \texttt{SmoothProjOverFiniteField}, \texttt{CycleClasses}, \texttt{GalInvariants} and \texttt{clEtale} are now fields of \texttt{TateSetting}. \texttt{Statement}, \texttt{openSentence} and \texttt{fourfoldSurfaces} now take the setting as an extra argument. The two propositions above were added. The repository had no theorems before.
+
+
+\appendix
+\section{Lean source}
+The complete Lean source of the certified development (copyright headers omitted) is reproduced verbatim.
+\subsection*{\texttt{TateConjecture/Basic.lean}}
+\begin{verbatim}
+/-!
+# Tate conjecture: named sentence
+
+Not a proof. Not Hodge. Not imported by BenFrohman/HODGE.
+A Frobenius eigenvalue q^2 is a numerical condition, not a cycle.
+
+The former axioms (`SmoothProjOverFiniteField`, `CycleClasses`, `GalInvariants`,
+`clEtale`) are now fields of the structure `TateSetting`. Every definition and
+theorem is parametric in such a setting; nothing about actual varieties is proved.
+-/
+
+namespace TateConjecture
+
+/-- Abstract data for the Tate conjecture: placeholder hosts over a finite field,
+cycle classes, Galois invariants in étale cohomology `H^{2i}(Q_ℓ(i))`, and a cycle
+class map. Not schemes; supplied by the user of the statement. -/
+structure TateSetting where
+  SmoothProjOverFiniteField : Type
+  CycleClasses : SmoothProjOverFiniteField → Nat → Type
+  GalInvariants : SmoothProjOverFiniteField → Nat → Type
+  clEtale : (X : SmoothProjOverFiniteField) → (i : Nat) → CycleClasses X i → GalInvariants X i
+
+variable (S : TateSetting)
+
+/-- Tate in codimension i: clEtale is surjective. Named, not proved. -/
+def Statement (X : S.SmoothProjOverFiniteField) (i : Nat) : Prop :=
+  ∀ y : S.GalInvariants X i, ∃ x : S.CycleClasses X i, S.clEtale X i x = y
+
+/-- The open sentence. There is no term of this type in this repository. -/
+def openSentence (X : S.SmoothProjOverFiniteField) (i : Nat) : Prop :=
+  Statement S X i
+
+/-- Fourfold surfaces: i = 2. Still a Prop. -/
+def fourfoldSurfaces (X : S.SmoothProjOverFiniteField) : Prop :=
+  Statement S X 2
+
+/-- The statement is exactly surjectivity of the cycle class map. -/
+theorem statement_iff_surjective (X : S.SmoothProjOverFiniteField) (i : Nat) :
+    Statement S X i ↔ Function.Surjective (S.clEtale X i) := Iff.rfl
+
+/-- The fourfold-surfaces sentence is the codimension-2 statement. -/
+theorem fourfoldSurfaces_iff (X : S.SmoothProjOverFiniteField) :
+    fourfoldSurfaces S X ↔ Statement S X 2 := Iff.rfl
+
+end TateConjecture
+\end{verbatim}
+
+\section{Verification certificate}\label{app:verification-certificate}
+
+The formal development was machine-checked as follows.
+
+{\raggedright
+\begin{itemize}
+\item Repository:\\ {\footnotesize\url{https://github.com/BenFrohman/TateConjecture}}
+\item Verified commit:\\ {\footnotesize\texttt{a308b72ab10e1b7f7670df1b5c1288cdb2e783db}}
+\item Lean toolchain: \texttt{leanprover/lean4:v4.34.0}
+\item Mathlib: none (the development depends only on Lean core)
+\item Continuous integration run (build, axiom audit, \texttt{sorry}/\texttt{axiom} scan; passed):\\ {\footnotesize\url{https://github.com/BenFrohman/TateConjecture/actions/runs/41794909195}}
+\item SHA-256 of the GitHub source tarball of the verified commit, downloaded twice with identical result:\\ {\footnotesize\url{https://github.com/BenFrohman/TateConjecture/archive/a308b72ab10e1b7f7670df1b5c1288cdb2e783db.tar.gz}}\\
+{\footnotesize\texttt{cf8e038db9227fe97bc5a8fb0c0fb43fdb1429d20a43bdc3438cb20b6e79d8d8}}
+\end{itemize}\par}
+
+The tarball hash refers to the verified commit rather than to a release tag, since a document cannot contain the hash of an archive that includes itself. The Lean sources are unchanged between that commit and the release tag.
+
+\textbf{The development contains no \texttt{sorry} and no user-declared axioms.} Every one of the 2 theorems and lemmas listed below depends only on Lean's standard axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} (or on none). The table is the verbatim output of \texttt{lake env lean AxiomAudit.lean} (\texttt{\#print axioms}) on the verified commit.
+
+{\footnotesize
+\begin{longtable}{p{0.55\linewidth}p{0.38\linewidth}}
+\hline
+Lean declaration & \texttt{\#print axioms} \\
+\hline\endhead
+\path{TateConjecture.fourfoldSurfaces_iff} & \texttt{(no axioms)} \\
+\path{TateConjecture.statement_iff_surjective} & \texttt{(no axioms)} \\
+\hline
+\end{longtable}}
+
+\begin{thebibliography}{9}
+\bibitem{tate} J.~Tate, \emph{Algebraic cycles and poles of zeta functions}, in: Arithmetical Algebraic Geometry, Harper \& Row (1965), 93--110.
+\bibitem{lean} L.~de Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, CADE-28, LNCS 12699 (2021), 625--635.
+\end{thebibliography}
+
+\end{document}

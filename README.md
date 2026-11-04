@@ -50,3 +50,7 @@ Tate stays open. Hodge stays open.
 - **SealGuard SHA-256 Merkle Root:** `90dd309e7e8d518f7ec3a1852481cc6f6e934e72ea5a54fd219e69afa8f46a10` (`PROVENANCE_MERKLE_ROOT.json`)
 - **Titan Audit Certificate:** `audit/TITAN_AUDIT_CERTIFICATE.json` (Ed25519 key `b428fb72676f1c52`)
 - **Scope & Scientific Boundary:** Formalizes the type-theoretic statement skeleton of the Tate Conjecture in Lean 4. Explicitly states that neither the Tate Conjecture nor the Hodge Conjecture is proved here.
+
+## Verification certificate
+
+See [CERTIFICATE.md](CERTIFICATE.md) and the paper in `paper/`.

@@ -1,0 +1,5 @@
+'TateConjecture.TateSetting.mk.sizeOf_spec' does not depend on any axioms [module TateConjecture.Basic]
+'TateConjecture.statement_iff_surjective' does not depend on any axioms [module TateConjecture.Basic]
+'TateConjecture.TateSetting.mk.injEq' depends on axioms: [propext] [module TateConjecture.Basic]
+'TateConjecture.fourfoldSurfaces_iff' does not depend on any axioms [module TateConjecture.Basic]
+'TateConjecture.TateSetting.mk.inj' does not depend on any axioms [module TateConjecture.Basic]

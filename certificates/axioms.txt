@@ -1,0 +1,6 @@
+'TateConjecture.TateSetting.mk.inj' does not depend on any axioms
+'TateConjecture.TateSetting.mk.injEq' depends on axioms: [propext]
+'TateConjecture.TateSetting.mk.sizeOf_spec' does not depend on any axioms
+'TateConjecture.fourfoldSurfaces_iff' does not depend on any axioms
+'TateConjecture.statement_iff_surjective' does not depend on any axioms
+AUDIT PASS: 5 theorems in 1 modules depend only on propext, Classical.choice, Quot.sound (or on no axioms)

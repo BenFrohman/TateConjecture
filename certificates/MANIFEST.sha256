@@ -1,0 +1,16 @@
+# Kernel certificate manifest
+# source commit: a0be54b461269781fda921857391311d4922c4a5
+# lean-toolchain: leanprover/lean4:v4.34.0
+# Mathlib: none (no Mathlib dependency)
+# CI run: https://github.com/BenFrohman/TateConjecture/actions/runs/43955669267
+# rebuild: git clone https://github.com/BenFrohman/TateConjecture.git && cd TateConjecture && git checkout a0be54b461269781fda921857391311d4922c4a5 && lake build && python3 certificates/tools/sorry_scan.py && python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt && lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt && python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt | tail -n 1
+# verify: cd certificates && sha256sum -c MANIFEST.sha256
+e8ef91e4267117b74133a3d75553acafa2617e69b865f297b01b0be3e8f860c8  CERTIFICATE.md
+9b976e826d13a447b62d487b40058e48d3e9bc123588c9ec7817c1063751444f  KernelCertificateAudit.lean.txt
+55e3065db8b0a0ffd141770f06ea862c0041ad30247e3fe94c63039a66eea938  axioms.raw.txt
+cc48f1ae167241118a09d6dd6ecf13dadb9d8b0f2de330de9235615a86e07618  axioms.txt
+fe1ffcf1b5a79beaef6df27ccada6a9273572f6f77c6c7d823e967160d720a76  build.log
+c77b9408e320eda9d700101a5274ee15a3870ec8abc1cdb64196ee21ca95942e  environment.txt
+ecec2c690ac542331daef3178b5f3927e75f0089640bb01249ac586f1375e3cb  leanchecker.txt
+3e31bdfb4c4fe2d80e7215dfa59832cfa544de7961f59db613212fe17d6d45c1  modules.txt
+f6a916ad807c8786f91618abb8f4c6a1d08d353e56ab03e470042d85ac819776  sorry-scan.txt
